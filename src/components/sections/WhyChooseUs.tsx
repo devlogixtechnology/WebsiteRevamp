@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import Container from "../ui/Container";
 import Reveal from "../ui/Reveal";
@@ -48,14 +49,16 @@ export default function WhyChooseUs() {
           </ul>
         </Reveal>
 
+        {/* Gradient stays as the backdrop so the frame still reads as designed while the
+            image decodes, rather than flashing an empty white box. */}
         <Reveal delay={0.1} className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-linear-to-br from-brand-navy via-brand-card to-brand-teal-dark">
-          <div
-            aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(20,184,166,0.35),transparent_60%)]"
+          <Image
+            src="/images/home/staff-augmentation.jpg"
+            alt="DevLogix engineers working together on laptops around a shared table"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
           />
-          <div className="absolute inset-0 flex items-center justify-center p-10 text-center text-sm font-medium text-white/70">
-            Team photo placeholder — source the real asset for this frame.
-          </div>
         </Reveal>
       </Container>
     </section>

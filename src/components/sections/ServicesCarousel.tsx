@@ -12,6 +12,7 @@ const IMAGES: Record<string, string> = {
   "software-development": "/images/services/software-development.jpg",
   "ui-ux-design": "/images/services/ui-ux-design.jpg",
   "cloud-solutions": "/images/services/cloud-solutions.jpg",
+  "digital-transformation": "/images/services/digital-engineering.jpg",
 };
 
 export default function ServicesCarousel() {

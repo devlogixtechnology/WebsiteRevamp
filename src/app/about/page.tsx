@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import StatFeature from "@/components/sections/StatFeature";
 import ValuesGrid from "@/components/sections/ValuesGrid";
@@ -37,6 +38,18 @@ export default function AboutPage() {
       <PageHero
         title="Beyond Code, We Engineer Legacies"
         subtitle="We build resilient, forward-thinking platforms, dedicated to innovation and sovereignty."
+        visual={
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-linear-to-br from-brand-card via-brand-navy to-brand-teal-dark">
+            <Image
+              src="/images/about/herosection.jpg"
+              alt="DevLogix engineering team at work"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
+            />
+          </div>
+        }
       />
 
       <StatFeature

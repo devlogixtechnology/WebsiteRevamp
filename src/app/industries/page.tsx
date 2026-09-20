@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHero from "@/components/sections/PageHero";
 import IntroWithStatsBar from "@/components/sections/IntroWithStatsBar";
 import ValuesGrid from "@/components/sections/ValuesGrid";
@@ -29,13 +30,14 @@ export default function IndustriesPage() {
         secondaryCta={{ label: "Explore Services", href: "/#services" }}
         visual={
           <div className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-linear-to-br from-brand-card via-brand-navy to-brand-teal-dark">
-            <div
-              aria-hidden
-              className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(20,184,166,0.35),transparent_60%)]"
+            <Image
+              src="/images/industries/industries-hero-section.jpg"
+              alt="DevLogix teams delivering technology across industry sectors"
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 45vw"
+              className="object-cover"
             />
-            <div className="absolute inset-0 flex items-center justify-center p-10 text-center text-sm font-medium text-white/70">
-              Industry visual placeholder — source the real asset for this frame.
-            </div>
           </div>
         }
       />

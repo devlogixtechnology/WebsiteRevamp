@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Container from "../ui/Container";
@@ -46,9 +47,17 @@ export default function ImpactSection({
         </Reveal>
 
         <Reveal delay={0.1} className="relative aspect-4/3 w-full overflow-hidden rounded-xl bg-linear-to-br from-brand-navy to-brand-teal-dark">
+          <Image
+            src="/images/about/sustainability-impact.jpg"
+            alt="Sustainable technology powering a greener data centre"
+            fill
+            sizes="(max-width: 1024px) 100vw, 50vw"
+            className="object-cover"
+          />
+          {/* Scrim keeps the stat card readable over whatever the photo's lower half contains. */}
           <div
             aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(20,184,166,0.3),transparent_60%)]"
+            className="absolute inset-0 bg-linear-to-t from-brand-navy/80 via-transparent to-transparent"
           />
           <div className="absolute bottom-4 left-4 right-4 rounded-xl border border-white/10 bg-brand-navy/90 p-4 backdrop-blur-[10px] sm:right-auto sm:w-56">
             <p className="text-xs font-bold tracking-[0.2em] text-brand-teal-hover uppercase">
