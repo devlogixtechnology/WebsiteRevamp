@@ -14,7 +14,12 @@ type Props = {
 
 // Tell Next which /blog/... pages exist, so it can build them ahead of time
 export function generateStaticParams() {
-  return blogs.map((post) => ({ slug: post.slug }));
+  const baseSlugs = blogs.map((post) => ({ slug: post.slug }));
+  return [
+    ...baseSlugs,
+    { slug: "why-most-digital-transformations-fail" },
+    { slug: "hidden-cost-cloud-native" },
+  ];
 }
 
 export default async function BlogPostPage({ params }: Props) {

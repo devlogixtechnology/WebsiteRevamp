@@ -380,7 +380,15 @@ export function getFeaturedPost() {
 }
 
 export function getPostBySlug(slug: string) {
-  return blogs.find((post) => post.slug === slug);
+  const direct = blogs.find((post) => post.slug === slug);
+  if (direct) return direct;
+  if (slug === "why-most-digital-transformations-fail") {
+    return blogs.find((post) => post.slug === "why-digital-transformations-fail");
+  }
+  if (slug === "hidden-cost-cloud-native") {
+    return blogs.find((post) => post.slug === "hidden-cost-cloud-native-rent-seeking");
+  }
+  return undefined;
 }
 
 export function getRelatedPosts(slug: string, count: number) {

@@ -6,7 +6,7 @@ import ServicesCarousel from "@/components/sections/ServicesCarousel";
 import StatsBand from "@/components/sections/StatsBand";
 import IndustriesServed from "@/components/sections/IndustriesServed";
 import Testimonials from "@/components/sections/Testimonials";
-import FeaturedInsights from "@/components/sections/FeaturedInsights";
+import InsightsSection from "@/components/sections/home/InsightsSection";
 import ContactCta from "@/components/sections/ContactCta";
 
 export const metadata: Metadata = {
@@ -25,7 +25,7 @@ export default function Home() {
       <StatsBand />
       <IndustriesServed />
       <Testimonials />
-      <FeaturedInsights />
+      <InsightsSection />
       <ContactCta />
     </>
   );

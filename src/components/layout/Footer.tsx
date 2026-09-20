@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Container from "../ui/Container";
 import { FacebookIcon, InstagramIcon, LinkedinIcon, TwitterIcon } from "../ui/SocialIcons";
@@ -60,8 +61,18 @@ export default function Footer() {
       <Container>
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr_1fr]">
           <div className="max-w-xs">
-            <Link href="/" className="text-xl font-bold tracking-tight text-white">
-              Dev<span className="text-brand-teal-hover">Logix</span>
+            <Link
+              href="/"
+              className="inline-block focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-teal focus-visible:ring-offset-2 focus-visible:ring-offset-brand-navy rounded-md"
+              aria-label="DevLogix Home"
+            >
+              <Image
+                src="/images/logo/devlogix-footer.svg"
+                alt="DevLogix"
+                width={140}
+                height={32}
+                className="h-8 md:h-9 w-auto object-contain"
+              />
             </Link>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
               We help businesses innovate, grow, and stay ahead with custom digital solutions
