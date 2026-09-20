@@ -104,7 +104,7 @@ export const AiDeliveryStepsSection: React.FC<AiDeliveryStepsSectionProps> = ({
                 transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
                 className={`w-full min-w-0 h-full min-h-[285px] bg-brand-navy rounded-[16px] p-6 sm:p-7 xl:p-8 flex flex-col justify-between transition-all duration-300 cursor-pointer border ${
                   isActive
-                    ? 'border-brand-teal-hover/80 shadow-[0_0_24px_rgba(20,184,166,0.18)] -translate-y-1'
+                    ? 'border-brand-teal-hover/80 shadow-glow-md -translate-y-1'
                     : 'border-white/10 hover:border-white/25 hover:-translate-y-1'
                 }`}
               >

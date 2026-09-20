@@ -85,6 +85,38 @@ Design tokens live in `src/app/globals.css` under `@theme`, generated from
   explaining it rather than silently deviating — the next person (or the next audit) needs to be
   able to tell "justified exception" from "someone forgot."
 
+### Teal, shadows and glows
+
+- **Never type the brand teal/navy as hex or `rgba()`** — not `#0d938c`, not `rgba(13,147,140,.4)`,
+  not `text-teal-300`. Use the token classes (`text-brand-teal`, `bg-brand-teal/10`,
+  `border-brand-teal-hover/40`). The Tailwind `/NN` opacity modifier covers alpha for classes.
+- **Pick the teal by the surface it sits on**: `brand-teal-dark` for text/links on white or light
+  surfaces (`brand-teal` is only 3.77:1 on white and fails AA); `brand-teal-hover` for text on dark
+  surfaces; `brand-teal` for borders, icons and large text. `ui/Kicker` already encodes this via
+  its `tone` prop — use it instead of hand-rolling a kicker. Stateful components (e.g. the
+  header's dark → white on scroll) must swap the teal with the surface, not just the neutrals.
+- **Shadows and glows come from tokens** in `globals.css`: `shadow-card` / `shadow-card-hover`
+  (white cards), `shadow-glow-sm|md|lg` (teal halos on dark surfaces), `drop-shadow-glow` (text
+  and icon halos). They are built with `color-mix()` from the palette, so retuning a brand color
+  retunes every shadow. For a one-off gradient that needs a palette color at partial alpha, use
+  `color-mix(in_srgb,var(--color-brand-teal-hover)_35%,transparent)` inside the arbitrary value,
+  not an `rgba()` copy. Plain black/white alpha (`black/40`, `rgba(255,255,255,.08)`) is neutral
+  and fine.
+- **Poppins is loaded at weights 400–700 only.** `font-extrabold`/`font-black` on Poppins text
+  silently falls back to the nearest loaded weight — use `font-bold`. Plus Jakarta Sans is loaded
+  at 500–800, so `font-extrabold` is valid with `font-jakarta`. Note that CLAUDE.md's Subheadline
+  spec says `font-light` (300), which is not loaded either and therefore renders as 400; adding
+  weight 300 in `layout.tsx` would make the spec render as written (and thinner) — a design call,
+  not a drive-by change.
+
+## Docker
+
+`docker compose up --build web` runs the production image; see the Docker section of `README.md`
+for the dev/e2e profiles. Two things to remember when touching config: `NEXT_PUBLIC_*` variables
+are inlined at build time (so they are Docker *build args*), and any new env var read by the app
+should treat an empty string as unset — Compose and `.env` files pass blanks through (see
+`src/lib/api/config.ts`). CI builds the image and smoke-tests the running container.
+
 ## Images
 
 New images go under `public/images/` in a folder matching what they're for, not dumped flat into

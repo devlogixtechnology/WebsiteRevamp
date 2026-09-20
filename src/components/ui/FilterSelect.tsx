@@ -53,7 +53,7 @@ export const FilterSelect = React.forwardRef<HTMLSelectElement, FilterSelectProp
             </svg>
           </div>
         </div>
-        {error && <span className="text-xs text-red-500">{error}</span>}
+        {error && <span className="text-xs text-red-600">{error}</span>}
       </div>
     );
   }

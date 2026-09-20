@@ -78,7 +78,7 @@ export const AiHeroSection: React.FC<AiHeroSectionProps> = ({ data }) => {
             className="w-full lg:max-w-[58%] xl:max-w-[62%] flex flex-col items-start z-10"
           >
             {/* Pill Tag */}
-            <div className="inline-flex items-center gap-2 bg-[rgba(20,184,166,0.1)] border border-brand-teal-hover/40 px-3.5 py-1 rounded-full mb-6 backdrop-blur-sm">
+            <div className="inline-flex items-center gap-2 bg-brand-teal-hover/10 border border-brand-teal-hover/40 px-3.5 py-1 rounded-full mb-6 backdrop-blur-sm">
               <span className="w-1.5 h-1.5 rounded-full bg-brand-teal-fill animate-pulse" />
               <span className="font-jakarta font-bold text-[11px] uppercase tracking-[1px] text-brand-teal-hover">
                 {badge}
@@ -115,7 +115,7 @@ export const AiHeroSection: React.FC<AiHeroSectionProps> = ({ data }) => {
             transition={{ duration: 0.7, delay: 0.2, ease: 'easeOut' }}
             className="w-full max-w-[440px] lg:max-w-[480px] xl:max-w-[520px] 2xl:max-w-[540px] aspect-square flex justify-center lg:justify-end z-10 shrink-0"
           >
-            <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-brand-teal-hover/40 bg-brand-navy shadow-[0_0_50px_rgba(20,184,166,0.25)] group">
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden border border-brand-teal-hover/40 bg-brand-navy shadow-glow-lg group">
               {/* Graphic Visual */}
               {data?.heroGraphicType === 'cloud-topology' ? (
                 <CloudTopologyGraphic activeBadgeText={activeBadgeText} />

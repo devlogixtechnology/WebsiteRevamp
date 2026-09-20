@@ -36,7 +36,7 @@ function HeroCopy() {
           variant="glass"
           size="lg"
           premium
-          className="hover:!border-brand-teal-fill hover:!bg-brand-teal-fill hover:shadow-[0_0_40px_rgba(12,132,126,0.35)]"
+          className="hover:!border-brand-teal-fill hover:!bg-brand-teal-fill hover:shadow-[0_0_40px_color-mix(in_srgb,var(--color-brand-teal-fill)_35%,transparent)]"
         >
           Partner with us
         </Button>

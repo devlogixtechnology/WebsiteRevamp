@@ -111,7 +111,7 @@ export const FaqSection: React.FC<FaqSectionProps> = ({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-50px' }}
             transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
-            className="lg:col-span-7 w-full min-w-0 bg-white border border-slate-200 rounded-[20px] p-6 sm:p-10 shadow-[0_4px_24px_rgba(0,0,0,0.02)]"
+            className="lg:col-span-7 w-full min-w-0 bg-white border border-slate-200 rounded-[20px] p-6 sm:p-10 shadow-card"
           >
             {items.map((faq, index) => (
               <AccordionItem

@@ -55,7 +55,7 @@ export const EngagementModelsSection: React.FC<EngagementModelsSectionProps> = (
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: index * 0.15, ease: 'easeOut' }}
-              className={`w-full min-w-0 bg-white border border-slate-200 rounded-[16px] p-6 sm:p-7 xl:p-8 flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1 hover:border-brand-teal-hover/40 transition-all duration-300 group min-h-[300px] sm:min-h-[320px] lg:min-h-[340px] ${
+              className={`w-full min-w-0 bg-white border border-slate-200 rounded-[16px] p-6 sm:p-7 xl:p-8 flex flex-col justify-between shadow-card hover:shadow-xl hover:-translate-y-1 hover:border-brand-teal-hover/40 transition-all duration-300 group min-h-[300px] sm:min-h-[320px] lg:min-h-[340px] ${
                 index === 2 ? 'md:col-span-2 md:max-w-[420px] md:mx-auto lg:col-span-1 lg:max-w-none' : ''
               }`}
             >

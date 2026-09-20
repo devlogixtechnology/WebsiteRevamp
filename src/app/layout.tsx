@@ -25,7 +25,7 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.devlogix.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.devlogix.com";
 
 // No title.template here: every page below sets its own complete "{Page Name} | DevLogix"
 // string (per CLAUDE.md's title pattern) rather than a bare page name for a template to wrap —

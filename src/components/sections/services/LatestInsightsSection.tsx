@@ -17,7 +17,7 @@ const InsightCard: React.FC<{ insight: InsightItem; index: number }> = ({ insigh
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-40px' }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="w-full min-w-0 max-w-[384px] min-h-[556px] bg-white border border-slate-200 rounded-[16px] overflow-hidden flex flex-col justify-between shadow-[0px_4px_16px_rgba(15,35,42,0.06)] hover:shadow-xl hover:border-brand-teal-hover/40 hover:-translate-y-1 transition-all duration-300 group"
+      className="w-full min-w-0 max-w-[384px] min-h-[556px] bg-white border border-slate-200 rounded-[16px] overflow-hidden flex flex-col justify-between shadow-card hover:shadow-xl hover:border-brand-teal-hover/40 hover:-translate-y-1 transition-all duration-300 group"
     >
       <div>
         {/* Card Thumbnail Image (384px x 220px) */}

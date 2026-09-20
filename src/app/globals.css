@@ -38,6 +38,18 @@
      centralized here instead of repeated as inline hex in each component. */
   --color-accent-blue: #3b82f6; /* decorative glow/dot accent — Hero, AI/Cloud/service hero visuals */
 
+  /* Shadows and glows are derived from the palette with color-mix() instead of hand-typed
+     rgba() copies of the same colors, so retuning a brand color retunes every shadow with it.
+     `shadow-card` / `shadow-card-hover` are the resting/hover elevation for white cards;
+     `shadow-glow-*` are teal-hover halos for dark surfaces (sm = dots/dividers, md = active
+     cards, lg = hero visuals); `drop-shadow-glow` is the matching text/icon halo. */
+  --shadow-card: 0 4px 20px color-mix(in srgb, var(--color-brand-navy) 5%, transparent);
+  --shadow-card-hover: 0 18px 40px -20px color-mix(in srgb, var(--color-brand-navy) 35%, transparent);
+  --shadow-glow-sm: 0 0 8px color-mix(in srgb, var(--color-brand-teal-hover) 60%, transparent);
+  --shadow-glow-md: 0 0 24px color-mix(in srgb, var(--color-brand-teal-hover) 18%, transparent);
+  --shadow-glow-lg: 0 0 50px color-mix(in srgb, var(--color-brand-teal-hover) 20%, transparent);
+  --drop-shadow-glow: 0 0 12px color-mix(in srgb, var(--color-brand-teal-hover) 60%, transparent);
+
   --animate-fade-in-up: fade-in-up 0.5s ease-out both;
   --animate-marquee: marquee 40s linear infinite;
 

@@ -24,7 +24,7 @@ export default function TeamCard({
 
   return (
     <div
-      className={`h-full overflow-hidden rounded-xl border border-slate-200 bg-white transition duration-300 hover:border-brand-teal/30 hover:shadow-[0_18px_40px_-20px_rgba(11,18,33,0.35)] ${className}`}
+      className={`h-full overflow-hidden rounded-xl border border-slate-200 bg-white transition duration-300 hover:border-brand-teal/30 hover:shadow-card-hover ${className}`}
     >
       <div className="relative aspect-4/3 w-full bg-brand-teal/10">
         {image ? (

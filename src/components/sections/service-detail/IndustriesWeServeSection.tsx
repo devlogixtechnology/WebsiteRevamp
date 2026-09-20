@@ -35,7 +35,7 @@ const IndustryCardItem: React.FC<{ item: IndustryCard; index: number }> = ({ ite
       <div
         className="absolute inset-0 transition-opacity duration-300 pointer-events-none"
         style={{
-          background: 'linear-gradient(180deg, rgba(11, 27, 43, 0) 0%, rgba(11, 27, 43, 0) 45%, rgba(11, 27, 43, 0.75) 75%, rgba(11, 27, 43, 0.95) 100%)',
+          background: 'linear-gradient(180deg, transparent 0%, transparent 45%, color-mix(in srgb, var(--color-brand-navy) 75%, transparent) 75%, color-mix(in srgb, var(--color-brand-navy) 95%, transparent) 100%)',
         }}
       />
 

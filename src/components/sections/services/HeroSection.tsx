@@ -38,7 +38,7 @@ export const HeroSection: React.FC = () => {
           <div className="flex items-center gap-4 pt-1">
             <Link
               href="/contact"
-              className="h-[41px] px-6 bg-brand-teal-dark hover:bg-brand-teal-fill text-white rounded-[20px] text-[14px] font-semibold flex items-center justify-center transition-all duration-200 shadow-[0_4px_16px_rgba(24,118,102,0.3)] hover:scale-[1.02]"
+              className="h-[41px] px-6 bg-brand-teal-dark hover:bg-brand-teal-fill text-white rounded-[20px] text-[14px] font-semibold flex items-center justify-center transition-all duration-200 shadow-lg shadow-brand-teal-dark/30 hover:scale-[1.02]"
             >
               Get a Free Consultation
             </Link>
@@ -59,8 +59,8 @@ export const HeroSection: React.FC = () => {
               className="absolute -top-10 -left-20 w-[420px] h-[360px] opacity-25 pointer-events-none z-10"
               style={{
                 backgroundImage: `
-                  linear-gradient(to right, rgba(20, 184, 166, 0.25) 1px, transparent 1px),
-                  linear-gradient(to bottom, rgba(20, 184, 166, 0.25) 1px, transparent 1px)
+                  linear-gradient(to right, color-mix(in srgb, var(--color-brand-teal-hover) 25%, transparent) 1px, transparent 1px),
+                  linear-gradient(to bottom, color-mix(in srgb, var(--color-brand-teal-hover) 25%, transparent) 1px, transparent 1px)
                 `,
                 backgroundSize: '24px 24px',
                 maskImage: 'radial-gradient(ellipse at 40% 40%, black 40%, transparent 80%)',
@@ -95,7 +95,7 @@ export const HeroSection: React.FC = () => {
             <div className="absolute top-1/2 right-8 sm:right-14 -translate-y-1/2 z-20 pointer-events-none">
               <div className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-brand-teal-fill animate-pulse shadow-[0_0_10px_var(--color-brand-teal-hover)]" />
-                <span className="font-jakarta font-bold text-sm sm:text-base lg:text-lg tracking-[0.14em] text-brand-teal-hover uppercase drop-shadow-[0_0_12px_rgba(20,184,166,0.85)]">
+                <span className="font-jakarta font-bold text-sm sm:text-base lg:text-lg tracking-[0.14em] text-brand-teal-hover uppercase drop-shadow-glow">
                   GLOBAL TECH SOLUTIONS
                 </span>
               </div>
@@ -130,7 +130,7 @@ export const HeroSection: React.FC = () => {
                   <div
                     className="w-full h-full rounded-full"
                     style={{
-                      background: 'conic-gradient(from 0deg, rgba(20, 184, 166, 0.4) 0deg, transparent 60deg, transparent 360deg)',
+                      background: 'conic-gradient(from 0deg, color-mix(in srgb, var(--color-brand-teal-hover) 40%, transparent) 0deg, transparent 60deg, transparent 360deg)',
                     }}
                   />
                 </motion.div>

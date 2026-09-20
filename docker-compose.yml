@@ -1,0 +1,67 @@
+# DevLogix site — local Docker workflows.
+#
+#   docker compose up --build web                 # production image on http://localhost:3000
+#   docker compose --profile dev up dev           # hot-reload dev server on http://localhost:3000
+#   docker compose --profile test run --rm e2e    # Playwright suite in the official Playwright image
+#
+# Optional variables (shell env or a .env file next to this file — NOT .env.local, which is for
+# `npm run dev` on the host):
+#   NEXT_PUBLIC_API_URL    real backend, e.g. http://localhost:5000/api/v1  (unset = built-in mock API)
+#   NEXT_PUBLIC_SITE_URL   canonical site URL for sitemap/robots/OG tags
+#   WEB_PORT               host port for the production container (default 3000)
+#
+# NEXT_PUBLIC_* are inlined at build time: after changing them run `docker compose build web`.
+
+name: devlogix
+
+services:
+  web:
+    build:
+      context: .
+      target: runner
+      args:
+        NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-}
+        NEXT_PUBLIC_SITE_URL: ${NEXT_PUBLIC_SITE_URL:-}
+    image: devlogix-web:local
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    restart: unless-stopped
+    init: true
+    # HEALTHCHECK is defined in the Dockerfile (GET /api/v1/health).
+
+  dev:
+    profiles: ["dev"]
+    build:
+      context: .
+      target: dev
+    image: devlogix-web:dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Live source. The two anonymous volumes keep the container's Linux node_modules and
+      # build cache instead of shadowing them with the host's (Windows/macOS) copies.
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      # File events from Windows/macOS bind mounts are unreliable; poll instead.
+      WATCHPACK_POLLING: "true"
+      CHOKIDAR_USEPOLLING: "true"
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL:-}
+    init: true
+
+  e2e:
+    profiles: ["test"]
+    # Must match the @playwright/test version in package.json (browsers are baked into this image).
+    image: mcr.microsoft.com/playwright:v${PLAYWRIGHT_VERSION:-1.63.0}-noble
+    working_dir: /app
+    volumes:
+      - .:/app
+      - /app/node_modules
+      - /app/.next
+    environment:
+      CI: "true"
+    ipc: host
+    init: true
+    # playwright.config.ts starts its own `next dev` on :3100 inside this container.
+    command: sh -c "npm ci && npx playwright test"

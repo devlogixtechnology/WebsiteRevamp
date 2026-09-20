@@ -1,0 +1,37 @@
+# Keep the build context small and the image free of local state and secrets.
+
+# dependencies / build output (rebuilt inside the image)
+node_modules
+.next
+out
+build
+coverage
+storybook-static
+
+# test artifacts
+test-results
+playwright-report
+
+# vcs / CI / editor
+.git
+.github
+.vscode
+.idea
+.claude
+
+# large reference material (gitignored, never needed at build time)
+DEVELOPMENT MATERIAL
+
+# env files — build args carry NEXT_PUBLIC_* values; never bake local secrets into an image
+.env*
+!.env.local.example
+
+# docker files themselves
+Dockerfile
+docker-compose*.yml
+.dockerignore
+
+# misc
+*.log
+*.tsbuildinfo
+.DS_Store

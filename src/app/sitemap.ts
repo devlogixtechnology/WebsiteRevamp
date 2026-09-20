@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { blogs } from "@/data/blogs";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.devlogix.com";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://www.devlogix.com";
 
 const STATIC_ROUTES = [
   "",

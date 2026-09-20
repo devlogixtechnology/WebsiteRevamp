@@ -13,7 +13,7 @@ export default function NumberedCard({
 }: NumberedCardProps) {
   return (
     <div
-      className={`flex h-full flex-col rounded-xl border border-slate-200 bg-white p-5 transition duration-300 hover:border-brand-teal/30 hover:shadow-[0_18px_40px_-20px_rgba(11,18,33,0.35)] sm:p-6 ${className}`}
+      className={`flex h-full flex-col rounded-xl border border-slate-200 bg-white p-5 transition duration-300 hover:border-brand-teal/30 hover:shadow-card-hover sm:p-6 ${className}`}
     >
       <div
         aria-hidden

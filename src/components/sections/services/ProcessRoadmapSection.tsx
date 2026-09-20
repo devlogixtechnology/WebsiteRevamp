@@ -7,23 +7,23 @@ import { processRoadmapData } from '@/data/servicesPageData';
 // Chunkier ("mote mote se") floating dots positioned both higher up ("thore opr bh") and around the line
 const floatingDots = [
   // Between 01 and 02
-  { id: 'dot-1', left: '17%', top: '22%', size: 7.5, color: 'var(--color-blue-500)', glow: 'rgba(59, 130, 246, 0.9)', duration: 6.5, delay: 0 },
-  { id: 'dot-2', left: '20%', top: '65%', size: 5, color: 'var(--color-brand-teal-hover)', glow: 'rgba(20, 184, 166, 0.85)', duration: 7.2, delay: 1 },
-  { id: 'dot-3', left: '26%', top: '12%', size: 6, color: 'var(--color-blue-400)', glow: 'rgba(96, 165, 250, 0.8)', duration: 6.8, delay: 0.9 },
-  { id: 'dot-4', left: '34%', top: '28%', size: 5.5, color: 'var(--color-sky-400)', glow: 'rgba(56, 189, 248, 0.8)', duration: 5.6, delay: 0.5 },
-  { id: 'dot-5', left: '37%', top: '72%', size: 4.5, color: 'var(--color-teal-400)', glow: 'rgba(45, 212, 191, 0.8)', duration: 6.2, delay: 2 },
+  { id: 'dot-1', left: '17%', top: '22%', size: 7.5, color: 'var(--color-blue-500)', duration: 6.5, delay: 0 },
+  { id: 'dot-2', left: '20%', top: '65%', size: 5, color: 'var(--color-brand-teal-hover)', duration: 7.2, delay: 1 },
+  { id: 'dot-3', left: '26%', top: '12%', size: 6, color: 'var(--color-blue-400)', duration: 6.8, delay: 0.9 },
+  { id: 'dot-4', left: '34%', top: '28%', size: 5.5, color: 'var(--color-sky-400)', duration: 5.6, delay: 0.5 },
+  { id: 'dot-5', left: '37%', top: '72%', size: 4.5, color: 'var(--color-teal-400)', duration: 6.2, delay: 2 },
 
   // Between 02 and 03
-  { id: 'dot-6', left: '59%', top: '24%', size: 6.5, color: 'var(--color-brand-teal-hover)', glow: 'rgba(20, 184, 166, 0.9)', duration: 7.8, delay: 1.2 },
-  { id: 'dot-7', left: '62%', top: '68%', size: 8, color: 'var(--color-blue-500)', glow: 'rgba(59, 130, 246, 0.95)', duration: 6.8, delay: 0.7 },
-  { id: 'dot-8', left: '68%', top: '14%', size: 5.5, color: 'var(--color-brand-teal-hover)', glow: 'rgba(20, 184, 166, 0.8)', duration: 7.4, delay: 1.4 },
-  { id: 'dot-9', left: '72%', top: '74%', size: 5, color: 'var(--color-blue-400)', glow: 'rgba(96, 165, 250, 0.75)', duration: 5.8, delay: 1.8 },
-  { id: 'dot-10', left: '74%', top: '26%', size: 6, color: 'var(--color-sky-400)', glow: 'rgba(56, 189, 248, 0.85)', duration: 7.0, delay: 0.3 },
+  { id: 'dot-6', left: '59%', top: '24%', size: 6.5, color: 'var(--color-brand-teal-hover)', duration: 7.8, delay: 1.2 },
+  { id: 'dot-7', left: '62%', top: '68%', size: 8, color: 'var(--color-blue-500)', duration: 6.8, delay: 0.7 },
+  { id: 'dot-8', left: '68%', top: '14%', size: 5.5, color: 'var(--color-brand-teal-hover)', duration: 7.4, delay: 1.4 },
+  { id: 'dot-9', left: '72%', top: '74%', size: 5, color: 'var(--color-blue-400)', duration: 5.8, delay: 1.8 },
+  { id: 'dot-10', left: '74%', top: '26%', size: 6, color: 'var(--color-sky-400)', duration: 7.0, delay: 0.3 },
 
   // Between 03 and 04
-  { id: 'dot-11', left: '88%', top: '15%', size: 5, color: 'var(--color-blue-400)', glow: 'rgba(96, 165, 250, 0.75)', duration: 6.0, delay: 0.4 },
-  { id: 'dot-12', left: '92%', top: '26%', size: 7.5, color: 'var(--color-blue-500)', glow: 'rgba(59, 130, 246, 0.9)', duration: 6.2, delay: 1.5 },
-  { id: 'dot-13', left: '95%', top: '64%', size: 5.5, color: 'var(--color-brand-teal-hover)', glow: 'rgba(20, 184, 166, 0.85)', duration: 7.5, delay: 2.3 },
+  { id: 'dot-11', left: '88%', top: '15%', size: 5, color: 'var(--color-blue-400)', duration: 6.0, delay: 0.4 },
+  { id: 'dot-12', left: '92%', top: '26%', size: 7.5, color: 'var(--color-blue-500)', duration: 6.2, delay: 1.5 },
+  { id: 'dot-13', left: '95%', top: '64%', size: 5.5, color: 'var(--color-brand-teal-hover)', duration: 7.5, delay: 2.3 },
 ];
 
 export const ProcessRoadmapSection: React.FC = () => {
@@ -55,7 +55,7 @@ export const ProcessRoadmapSection: React.FC = () => {
           </motion.p>
 
           {/* Top Decorative Accent Dash from Figma */}
-          <div className="w-5 h-[3px] bg-gradient-to-r from-pink-400 to-brand-teal-hover rounded-full mx-auto mt-6 opacity-75 shadow-[0_0_8px_rgba(20,184,166,0.6)]" />
+          <div className="w-5 h-[3px] bg-gradient-to-r from-accent-blue to-brand-teal-hover rounded-full mx-auto mt-6 opacity-75 shadow-glow-sm" />
         </div>
 
         {/* 4 Process Nodes with Chunky Animated Floating Micro-Dots */}
@@ -86,7 +86,7 @@ export const ProcessRoadmapSection: React.FC = () => {
                   width: `${dot.size}px`,
                   height: `${dot.size}px`,
                   backgroundColor: dot.color,
-                  boxShadow: `0 0 10px 2px ${dot.glow}`,
+                  boxShadow: `0 0 10px 2px color-mix(in srgb, ${dot.color} 85%, transparent)`,
                 }}
                 className="absolute rounded-full pointer-events-none"
               />
@@ -139,7 +139,7 @@ export const ProcessRoadmapSection: React.FC = () => {
           </div>
 
           {/* Bottom Decorative Accent Dash from Figma */}
-          <div className="w-5 h-[2.5px] bg-brand-teal-hover/70 rounded-full mx-auto mt-16 shadow-[0_0_8px_rgba(20,184,166,0.6)]" />
+          <div className="w-5 h-[2.5px] bg-brand-teal-hover/70 rounded-full mx-auto mt-16 shadow-glow-sm" />
         </div>
       </div>
     </section>

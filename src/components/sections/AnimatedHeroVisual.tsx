@@ -34,17 +34,17 @@ export default function AnimatedHeroVisual() {
       <motion.div
         animate={{ y: [-8, 8, -8] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="relative z-10 w-[360px] h-[360px] rounded-2xl p-[1px] bg-gradient-to-br from-brand-teal-hover/60 via-slate-700/40 to-transparent shadow-[0_0_50px_rgba(20,184,166,0.15)]"
+        className="relative z-10 w-[360px] h-[360px] rounded-2xl p-[1px] bg-gradient-to-br from-brand-teal-hover/60 via-slate-700/40 to-transparent shadow-glow-lg"
       >
         <div className="relative w-full h-full rounded-2xl overflow-hidden bg-brand-navy/90 backdrop-blur-md">
           {/* Abstract gradient center graphic — see note above on why this isn't a photo */}
           <div
             aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(circle_at_35%_30%,rgba(20,184,166,0.35),transparent_60%),radial-gradient(circle_at_75%_75%,rgba(59,130,246,0.25),transparent_55%)] transition-transform duration-700 hover:scale-105"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_35%_30%,color-mix(in_srgb,var(--color-brand-teal-hover)_35%,transparent),transparent_60%),radial-gradient(circle_at_75%_75%,color-mix(in_srgb,var(--color-accent-blue)_25%,transparent),transparent_55%)] transition-transform duration-700 hover:scale-105"
           />
 
           {/* Cyan Grid Scanline Overlay */}
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#14B8A608_1px,transparent_1px),linear-gradient(to_bottom,#14B8A608_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,color-mix(in_srgb,var(--color-brand-teal-hover)_3%,transparent)_1px,transparent_1px),linear-gradient(to_bottom,color-mix(in_srgb,var(--color-brand-teal-hover)_3%,transparent)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
 
           {/* Gradient Edges */}
           <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-70" />

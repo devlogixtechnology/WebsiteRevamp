@@ -45,7 +45,7 @@ export const KeyChallengesSection: React.FC<KeyChallengesSectionProps> = ({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.5, delay: index * 0.1, ease: 'easeOut' }}
-                className="w-full min-w-0 h-full min-h-[285px] bg-white border border-slate-200 rounded-[16px] p-6 sm:p-7 xl:p-8 flex flex-col justify-between shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1 hover:border-brand-teal-hover/40 transition-all duration-300 group"
+                className="w-full min-w-0 h-full min-h-[285px] bg-white border border-slate-200 rounded-[16px] p-6 sm:p-7 xl:p-8 flex flex-col justify-between shadow-card hover:shadow-xl hover:-translate-y-1 hover:border-brand-teal-hover/40 transition-all duration-300 group"
               >
                 <div>
                   {/* Alert/Accent Badges: orange-50/400/200 and rose-50/500/200 exactly match the

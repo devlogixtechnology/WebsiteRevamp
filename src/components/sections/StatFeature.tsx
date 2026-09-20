@@ -28,7 +28,7 @@ export default function StatFeature({
       {gradient && (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(13,147,140,0.12),transparent_55%),radial-gradient(circle_at_80%_80%,rgba(20,184,166,0.1),transparent_50%)]"
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,color-mix(in_srgb,var(--color-brand-teal)_12%,transparent),transparent_55%),radial-gradient(circle_at_80%_80%,color-mix(in_srgb,var(--color-brand-teal-hover)_10%,transparent),transparent_50%)]"
         />
       )}
 

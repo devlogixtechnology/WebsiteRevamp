@@ -30,6 +30,31 @@ jobs:
       # on PR #7 (see DEVELOPMENT MATERIAL/CI logs/2_lint-and-build.txt) before this fix.
       - run: npm run build
 
+  # The production Docker image builds and actually serves traffic: the container has to become
+  # healthy (Dockerfile HEALTHCHECK -> /api/v1/health), render the homepage, and optimize an
+  # image (proves sharp's native binary made it into the slim runner stage).
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build production image
+        run: docker build -t devlogix-web:ci .
+      - name: Start container
+        run: docker run -d --name web -p 3000:3000 devlogix-web:ci
+      - name: Smoke test
+        run: |
+          for i in $(seq 1 30); do
+            [ "$(docker inspect -f '{{.State.Health.Status}}' web)" = "healthy" ] && break
+            sleep 2
+          done
+          test "$(docker inspect -f '{{.State.Health.Status}}' web)" = "healthy"
+          curl -fsS http://localhost:3000/api/v1/health
+          curl -fsS -o /dev/null http://localhost:3000/
+          curl -fsS -o /dev/null "http://localhost:3000/_next/image?url=%2Fimages%2Fhome%2Fcta-form.jpg&w=640&q=75"
+      - name: Container logs
+        if: failure()
+        run: docker logs web
+
   # Priority 3: component smoke tests (Storybook stories via the vitest addon) + Priority 5:
   # accessibility (axe-core runs as part of those same stories, see .storybook/preview.tsx).
   # Also runs the plain-Node unit tests (src/**/*.test.ts) as the same `vitest run` invocation.

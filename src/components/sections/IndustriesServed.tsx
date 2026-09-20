@@ -93,7 +93,7 @@ export default function IndustriesServed() {
         >
           <div
             aria-hidden
-            className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(20,184,166,0.3),transparent_60%)]"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,color-mix(in_srgb,var(--color-brand-teal-hover)_30%,transparent),transparent_60%)]"
           />
           {IMAGES[INDUSTRIES[active]] ? (
             <Image

@@ -125,7 +125,7 @@ export default function BlogCard({
   return (
     <Link
       href={href}
-      className={`group flex h-full flex-col overflow-hidden rounded border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_40px_-20px_rgba(11,18,33,0.35)] ${focusRing} ${className}`}
+      className={`group flex h-full flex-col overflow-hidden rounded border border-slate-200 bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover ${focusRing} ${className}`}
     >
       <div className="relative aspect-16/10 w-full shrink-0 bg-brand-teal/10">
         {image && (

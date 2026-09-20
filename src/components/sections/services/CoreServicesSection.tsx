@@ -94,7 +94,7 @@ export const CoreServicesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="w-full min-w-0 max-w-[384px] min-h-[281px] bg-white border border-slate-200 rounded-[12px] p-8 flex flex-col justify-between shadow-[0_4px_16px_rgba(15,35,42,0.06)] hover:shadow-xl hover:border-brand-teal-hover/40 hover:-translate-y-1 transition-all duration-300 group"
+              className="w-full min-w-0 max-w-[384px] min-h-[281px] bg-white border border-slate-200 rounded-[12px] p-8 flex flex-col justify-between shadow-card hover:shadow-xl hover:border-brand-teal-hover/40 hover:-translate-y-1 transition-all duration-300 group"
             >
               <div>
                 {/* 44x44px icon box — bg-brand-teal-fill (not bg-brand-teal) so the icon reads
@@ -136,7 +136,7 @@ export const CoreServicesSection: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-              className="w-full min-w-0 max-w-[384px] min-h-[281px] bg-white border border-slate-200 rounded-[12px] p-8 flex flex-col justify-between shadow-[0_4px_16px_rgba(15,35,42,0.06)] hover:shadow-xl hover:border-brand-teal-hover/40 hover:-translate-y-1 transition-all duration-300 group"
+              className="w-full min-w-0 max-w-[384px] min-h-[281px] bg-white border border-slate-200 rounded-[12px] p-8 flex flex-col justify-between shadow-card hover:shadow-xl hover:border-brand-teal-hover/40 hover:-translate-y-1 transition-all duration-300 group"
             >
               <div>
                 {/* 44x44px teal tint icon box */}

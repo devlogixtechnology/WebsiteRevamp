@@ -29,7 +29,7 @@ export const FilterInput = React.forwardRef<HTMLInputElement, FilterInputProps>(
           )}
           {...props}
         />
-        {error && <span className="text-xs text-red-500">{error}</span>}
+        {error && <span className="text-xs text-red-600">{error}</span>}
       </div>
     );
   }

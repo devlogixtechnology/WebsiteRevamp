@@ -69,7 +69,7 @@ export default function FileUpload({
         onChange={(e) => setFileName(e.target.files?.[0]?.name ?? null)}
       />
       {error && (
-        <p role="alert" className="mt-1.5 text-xs text-red-500">
+        <p role="alert" className={`mt-1.5 text-xs ${tone === "dark" ? "text-red-400" : "text-red-600"}`}>
           {error}
         </p>
       )}

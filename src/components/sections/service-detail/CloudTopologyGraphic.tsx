@@ -22,7 +22,7 @@ export const CloudTopologyGraphic: React.FC<CloudTopologyGraphicProps> = ({
         className="absolute inset-0 opacity-15 pointer-events-none"
         style={{
           backgroundImage:
-            'radial-gradient(rgba(20, 184, 166, 0.4) 1px, transparent 1px)',
+            'radial-gradient(color-mix(in srgb, var(--color-brand-teal-hover) 40%, transparent) 1px, transparent 1px)',
           backgroundSize: '20px 20px',
         }}
       />
